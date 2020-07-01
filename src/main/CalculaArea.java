@@ -2,6 +2,8 @@ package main;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.util.Scanner;
+
 /**
  * Tarefa 1: Construa uma classe com três métodos estáticos...
  */
@@ -10,10 +12,19 @@ public class CalculaArea {
 
         CalculaArea c = new CalculaArea();
 
-        c.calcula(4.0, 6.0, 1);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o tamanho do primeiro lado, base, ou raio:");
+        double a = scanner.nextDouble();
+        System.out.println("Digite o tamanho do segundo lado, altura, ou zero:");
+        double b = scanner.nextDouble();
+        System.out.println("Digite o tipo de área a ser calculado: \n 1 = Retangulo \n 2 = Triangulo \n 3 = Circulo");
+        int op = scanner.nextInt();
+
+        c.calcula(a, b, op);
+        /*c.calcula(4.0, 6.0, 1);
         c.calcula(3.0,3.0, 2);
         c.calcula(2, 0, 3);
-        c.calcula(1, 1, 5);
+        c.calcula(1, 1, 5);*/
     }
 
     public double calcula(double a, double b, int op) {
