@@ -1,9 +1,0 @@
-# Nunca mergear para outras branches.
-
-Esta branch deve ser vazia por padrão. Serve apenas como base para que cada tarefa tenha sua propria branch.
-
-Para ver uma tarefa isolada use 'git checkout tarefa<X>'
-    Por exemplo para ver apenas a tarefa 01:
-        git checkout tarefa01
-
-Para ver todas as tarefas use 'git checkout master'.
