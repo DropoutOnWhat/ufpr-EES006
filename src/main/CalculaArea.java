@@ -11,15 +11,18 @@ public class CalculaArea {
     public static void main(String[] args) {
 
         CalculaArea c = new CalculaArea();
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o tamanho do primeiro lado, base, ou raio:");
-        double a = scanner.nextDouble();
-        System.out.println("Digite o tamanho do segundo lado, altura, ou zero:");
-        double b = scanner.nextDouble();
+
+        double a = 0;
+        double b = 0;
         System.out.println("Digite o tipo de área a ser calculado: \n 1 = Retangulo \n 2 = Triangulo \n 3 = Circulo");
         int op = scanner.nextInt();
-
+        System.out.println("Digite o tamanho do primeiro lado, base, ou raio:");
+        a = scanner.nextDouble();
+        if (op != 3) {
+            System.out.println("Digite o tamanho do segundo lado, altura, ou zero:");
+            b = scanner.nextDouble();
+        }
         c.calcula(a, b, op);
         /*c.calcula(4.0, 6.0, 1);
         c.calcula(3.0,3.0, 2);
