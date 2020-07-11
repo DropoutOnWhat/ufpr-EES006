@@ -1,7 +1,14 @@
 package model;
 
-public class Retangulo {
-    public Retangulo(double a, double b) {
+public class Retangulo extends Forma {
+
+    double area;
+
+    public Retangulo(int numMedidas) {
+        super(numMedidas);
+    }
+
+    public void calcular(double a, double b) {
         if(a > 0 && b > 0) {
             this.setArea(a * b);
         } else {
@@ -9,13 +16,19 @@ public class Retangulo {
         }
     }
 
-    double area;
-
     public double getArea() {
         return area;
     }
 
     public void setArea(double area) {
         this.area = area;
+    }
+
+    @Override
+    public double area() {
+        double a = super.getMedida(1);
+        double b = super.getMedida(2);
+        this.calcular(a, b);
+        return this.getArea();
     }
 }
