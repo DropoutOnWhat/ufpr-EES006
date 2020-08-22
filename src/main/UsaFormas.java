@@ -1,6 +1,7 @@
 package main;
 
 import model.Cricunferencia;
+import model.Forma;
 import model.Retangulo;
 import model.Triangulo;
 import org.junit.platform.commons.util.StringUtils;
@@ -28,12 +29,14 @@ public class UsaFormas {
                         try {
                             System.out.print("Informe o raio: ");
                             a = scanner.nextDouble();
-                            Cricunferencia c = new Cricunferencia(a);
+                            Forma c = new Cricunferencia(1);
+                            c.setMedida(1, a);
+                            double area = c.area();
                             result.append("Calculo " + i + ": ")
                                     .append("Area do circulo com raio = ")
                                     .append(a)
                                     .append(" é: ")
-                                    .append(c.getArea())
+                                    .append(area)
                                     .append("\n");
                         } catch (RuntimeException re) {
                             System.out.println(re.getMessage());
@@ -47,14 +50,17 @@ public class UsaFormas {
                             a = scanner.nextDouble();
                             System.out.print("Informe o lado B: ");
                             b = scanner.nextDouble();
-                            Retangulo r = new Retangulo(a, b);
+                            Forma r = new Retangulo(2);
+                            r.setMedida(1, a);
+                            r.setMedida(2, b);
+                            double area = r.area();
                             result.append("Calculo " + i + ": ")
                                     .append("Area do retangulo com lados ")
                                     .append(a)
                                     .append(" e ")
                                     .append(b)
                                     .append(" é: ")
-                                    .append(r.getArea())
+                                    .append(area)
                                     .append("\n");
                         } catch (RuntimeException re) {
                             System.out.println(re.getMessage());
@@ -68,14 +74,17 @@ public class UsaFormas {
                             a = scanner.nextDouble();
                             System.out.print("Informe a altura: ");
                             b = scanner.nextDouble();
-                            Triangulo t = new Triangulo(a, b);
+                            Forma t = new Triangulo(2);
+                            t.setMedida(1, a);
+                            t.setMedida(2, b);
+                            double area = t.area();
                             result.append("Calculo " + i + ": ")
                                     .append("Area do triangulo com base = ")
                                     .append(a)
                                     .append(" e altura = ")
                                     .append(b)
                                     .append(" é: ")
-                                    .append(t.getArea())
+                                    .append(area)
                                     .append("\n");
                         } catch (RuntimeException re) {
                             System.out.println(re.getMessage());
